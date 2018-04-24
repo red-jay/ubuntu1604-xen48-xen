@@ -1,0 +1,15 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: redjays/xenial:dkms-build
+    working_directory: /project
+    steps:
+      - checkout
+      - run:
+          name: load keyring
+          command: ./loadkey.sh
+      - run:
+          name: submit libssh2 build
+          command: ./build.sh
