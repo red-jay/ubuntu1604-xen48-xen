@@ -1,0 +1,19 @@
+diff -uNr xen-4.8.3+xsa262+shim4.10.0+comet3/debian/rules.real xen-4.8.3+xsa262+shim4.10.0+comet3-ovmf/debian/rules.real
+--- xen-4.8.3+xsa262+shim4.10.0+comet3/debian/rules.real	2018-05-22 15:01:59.000000000 +0000
++++ xen-4.8.3+xsa262+shim4.10.0+comet3-ovmf/debian/rules.real	2018-06-12 22:46:12.188140439 +0000
+@@ -52,6 +52,7 @@
+ 	cd $(DIR)/shim; \
+ 		WGET=/bin/false \
+ 		./configure --disable-docs --disable-stubdom \
++		--enable-ovmf --with-system-ovmf=/usr/share/ovmf/OVMF.fd \
+ 		--prefix=/usr \
+ 		--includedir=/usr/include \
+ 		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
+@@ -80,6 +81,7 @@
+ 		WGET=/bin/false \
+ 		./configure \
+ 			--disable-docs --disable-stubdom --disable-xen \
++			--enable-ovmf --with-system-ovmf=/usr/share/ovmf/OVMF.fd \
+ 			--prefix=/usr \
+ 			--includedir=/usr/include \
+ 			--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
