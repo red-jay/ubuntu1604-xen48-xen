@@ -77,4 +77,4 @@ dpkg-source -b "${ov/_/-}/"
 
 # ship to PPA
 type backportpackage || { apt-get -qq -y update && apt-get -qq -y install ubuntu-dev-tools ; }
-backportpackage -d xenial -u ppa:notarrjay/stretch-xen-on-xenial "${lv}" -S '~ppa2'
+backportpackage -d xenial -u ppa:notarrjay/stretch-xen-on-xenial -y "${lv}" -S '~ppa2'
